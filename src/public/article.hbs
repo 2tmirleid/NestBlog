@@ -8,11 +8,14 @@
   <title>{{ article.title }}</title>
 </head>
 <body>
-  <div class="main-container">
+  <div class="main-container" align="center">
     <h2>{{ article.title }}</h2>
     <br>
     <p>{{ article.content }}</p>
-    <p>Author: <a href="/authors/{{ article.author.email }}">{{ article.author.email }}</a></p>
+    <p>Author: <a href="/authors/{{ article.author.name }}">{{ article.author.name }}</a></p>
+    <div class="to-main-page">
+      <p><a href="/">Get back to Home</a></p>
+    </div>
   </div>
 </body>
 </html>

@@ -17,9 +17,9 @@ export class AuthorService {
     });
   }
 
-  async getAuthorByEmail(email) {
+  async getAuthorByName(name) {
     return await this.authorRepository.findOne({
-      where: { email },
+      where: { name },
       include: { all: true }
     })
   }

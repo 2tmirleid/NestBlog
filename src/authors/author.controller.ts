@@ -1,6 +1,7 @@
 import { Body, Controller, Get, Param, Post, Render } from "@nestjs/common";
 import { AuthorService } from "./author.service";
 import { CreateUserDto } from "../dto/create-user.dto";
+import { ArticleService } from "../articles/article.service";
 
 @Controller('/authors')
 export class AuthorController {
@@ -16,9 +17,13 @@ export class AuthorController {
     return await this.authorService.getAllAuthors();
   }
 
-  @Get('/:email')
+  @Get('/:name')
   @Render('author')
-  async getAuthorByEmail(@Param('email') email: string) {
-    const author = await this.authorService.getAuthorByEmail(email);
+  async getAuthorByEmail(@Param('name') name: string) {
+    const author = await this.authorService.getAuthorByName(name);
+
+    return {
+      author: author,
+    };
   }
 }
