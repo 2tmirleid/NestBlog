@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <style>
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+  </style>
+
+  <title>{{ title }}</title>
+</head>
+<body>
+  <div class="main-container">
+    <h1 align="center">Nest Blog by <a href="https://github.com/2tmirleid">2tmirleid</a></h1>
+    <div class="authors-container" align="center">
+      <h2>Authors</h2>
+      <ul>
+        {{#each authors}}
+          <li><a href="/authors/{{ this.email }}">{{ this.email }}</a></li>
+        {{/each}}
+      </ul>
+    </div>
+    <div class="articles-container" align="center">
+      <h2>Articles</h2>
+      <ul>
+        {{#each articles }}
+          <li><a href="/articles/{{ this.title }}">{{ this.title }}</li>
+        {{/each}}
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
